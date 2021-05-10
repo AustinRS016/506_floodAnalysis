@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<!-- Link to JQuery library-->
+		 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+		<!-- insert Mapbox GL library links here -->
+			<script src='https://api.mapbox.com/mapbox-gl-js/v1.12.0/mapbox-gl.js'></script>
+			<link href='https://api.mapbox.com/mapbox-gl-js/v1.12.0/mapbox-gl.css' rel='stylesheet' />
+			<link rel="stylesheet" href="index.css" type="text/css"/>
+
+	</head>
+
+	<body>
+		<h1 class="headers"><center>Flood Risk for Everett, Washington</center></h1>
+		<!-- create div for the map here -->
+				<nav id='menu'></nav>
+		<div id='map'>
+
+<div class='map-overlay' id='legend'>
+	<h1>Legend</h1>
+	<ul style="list-style-type:none" class="legend-key">
+		<li>
+			<svg width="24" height="24">
+				<circle cx="12" cy="20" r="4" fill="green"/>
+			</svg>
+			<text>Schools</text>
+		</li>
+		<li>
+			<svg width="24" height="24">
+				<circle cx="12" cy="20" r="4" fill="yellow"/>
+			</svg>
+			<text>Inter-city Bus Stations</text>
+		</li>
+		<li>
+			<svg width="24" height="24">
+				<circle cx="12" cy="20" r="4" fill="orange"/>
+			</svg>
+			<text>Refuge Centers</text>
+		</li>
+		<li>
+				<svg width="24" height="24">
+					<line x1="5" y1="5" x2="160" y2="160" style="stroke:yellow;stroke-width:2.3"/>
+			</svg>
+			<text>Major Roads</text>
+		</li>
+
+
+
+
+
+</div>
+</div>
+
+
+
+		<!-- JS code for the map goes here -->
+
+
+
+<script src = 'index.js'></script>
+
+<p>This map shows the flood risk(<span class="buttonText"style="color: white">   fema  </span>) in the city of Everett in relation to public schools, inter-city transit, major roads, potential refuge centers and a social vulnerability index.</p>
+<p>The flood risk is calculated by FEMA (Federal Emergency Management Agency) and is displayed in 3 categories:
+	<ul>
+	<li>
+		Depicted in <span class="colorText"style="color: red"> red</span> are areas in the base flood plane.
+	</li>
+	<li>
+		Depicted in <span class="colorText"style="color: orange"> orange</span> are areas with a 1% annual chance of flooding/26% chance of flooding during a 30 year mortgage.
+	</li>
+	<li>
+		Depicted in <span class="colorText"style="color: yellow"> yellow</span> are areas with a 0.2% annual chance of flooding.
+	</li>
+</ul>
+</p>
+
+<p>Social vulnerability index (<span class="buttonText"style="color: white">   svi  </span>) ranks each cenus tract based on 14 social factors and is used to determine which communites are most likely in need of support surrounding a hazardous event.
+	Census tracts are assinged ranks on a scale from 0 (<span class="colorText"style="color: red"> lowest</span>) to 1 (<span class="colorText"style="color: green"> highest</span>). Click on a tract to reveal its SVI score.
+	Read more <a href="https://svi.cdc.gov/Documents/Publications/CDC_ATSDR_SVI_Materials/SVI_Poster_07032014_FINAL.pdf" target="_blank">here</a>.</p>
+
+
+	</body>
+</html>

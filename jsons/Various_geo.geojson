@@ -1,0 +1,10 @@
+{"type":"FeatureCollection",
+  "features":
+  [    {"type":"Feature","id":2,"geometry":{"type":"Point","coordinates":[-122.20380085606712,47.966216517600735]},
+          "properties":{"OBJECTID_1":2,"name1":"Memorial Stadium","name2":"","name3":"","objectid":7}},
+          {"type":"Feature","id":4,"geometry":{"type":"Point","coordinates":[-122.20757342812082,47.981520174270479]},
+              "properties":{"OBJECTID_1":4,"name1":"Everett Performing Arts Center","name2":"","name3":"","objectid":3}},
+            {"type":"Feature","id":5,"geometry":{"type":"Point","coordinates":[-122.20301408638846,47.97859287038569]},
+              "properties":{"OBJECTID_1":5,"name1":"Everett Events Center","name2":"","name3":"","objectid":5}}
+
+]}
