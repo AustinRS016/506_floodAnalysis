@@ -1,14 +1,14 @@
 .headers {
   background-color: #92B4A7;
  color: 'black';
- font-family: 'Comic Sans MS'; cursive; sans-serif;
+ font-family: 'Tahoma'; cursive; sans-serif;
  font-size: 1.6em;
  padding: 20px;
  text-align: center;
 }
 body {
   font-family: "Tahoma"; sans-serif;
-  background-color: #F3F9D2;
+  background-color: white;
   color: #2F2F2F;
   font-size:1.2em;
   max-width: 65em;

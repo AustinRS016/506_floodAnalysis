@@ -4,8 +4,8 @@ mapboxgl.accessToken = 'pk.eyJ1IjoiYXVzdGlucnMxNiIsImEiOiJja2hjcjAyYWwwMTIyMnVsN
 var map = new mapboxgl.Map({
   container: 'map', // HTML container id
   style: 'mapbox://styles/austinrs16/ckpq3r4410f7v17q283jlabzw', // style URL
-  center: [-122, 48], // starting position as [lng, lat]
-  zoom: 10, // starting zoom
+  center: [-122.2, 47.96], // starting position as [lng, lat]
+  zoom: 10.85, // starting zoom
 });
 
 
@@ -22,18 +22,46 @@ map.addSource('Roads',{
      "source":"Roads",
      "layout": {'visibility': 'visible'},
      "paint": {
-      'line-color': '#ffde0a',
+      'line-color': 'blue',
 
 
     },
 
    });
+ map.addSource('svi',{
+        "type": "geojson",
+        "data": "jsons/SVI2018_geo.geojson"
+    });
+    map.addLayer({
+      "id":"svi",
+      "type":"fill",
+      "source":"svi",
+      "layout": {'visibility': 'visible'},
+      "paint": {
+        'fill-antialias': true,
+       'fill-color':[
+         'interpolate', ['linear'],
+         ['get', 'RPL_THEMES'],
+         0,
+         ['to-color', '#d2eba2'],
+         1,
+         ['to-color', '#000e66']
+       ],
+       'fill-opacity': [
+         'case',
+         ['boolean', ['feature-state', 'hover'], false],
+         1,
+         0.4
+       ]
+     }
+    });
 
-map.addSource('FEMA_Zones_geo',{
+
+    map.addSource('FEMA_Zones_geo',{
      "type": "geojson",
      "data": "jsons/FEMA_Zones_geo.geojson"
  });
- map.addLayer({
+      map.addLayer({
    "id":"fema",
    "type":"fill",
    "source":"FEMA_Zones_geo",
@@ -57,39 +85,11 @@ map.addSource('FEMA_Zones_geo',{
             ],
      'orange'
       ],
-   'fill-opacity': .65
+   'fill-opacity': 1
 
       },
 
         });
-
-   map.addSource('svi',{
-        "type": "geojson",
-        "data": "jsons/SVI2018_geo.geojson"
-    });
-    map.addLayer({
-      "id":"svi",
-      "type":"fill",
-      "source":"svi",
-      "layout": {'visibility': 'visible'},
-      "paint": {
-        'fill-antialias': true,
-       'fill-color':[
-         'interpolate', ['linear'],
-         ['get', 'RPL_THEMES'],
-         0,
-         ['to-color', 'red'],
-         1,
-         ['to-color', 'green']
-       ],
-       'fill-opacity': [
-         'case',
-         ['boolean', ['feature-state', 'hover'], false],
-         1,
-         0.2
-       ]
-     }
-    });
 
     map.addSource('Schools',{
          "type": "geojson",
